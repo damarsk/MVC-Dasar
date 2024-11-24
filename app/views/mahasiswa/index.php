@@ -5,9 +5,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary btn-sm mb-2 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 Tambah Data Mahasiswa
             </button>
             <!-- Modal -->
@@ -15,22 +15,23 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="judulModal">Tambah Data Mahasiswa</h1>
+                            <h1 class="modal-title fs-5" id="judulModalHeader">Tambah Data Mahasiswa</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
+                        </div> 
                         <div class="modal-body">
                             <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="POST">
+                                <input type="hidden" name="id" id="id">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama" name="nama" required>
+                                    <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" name="nama" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nrp" class="form-label">NRP</label>
-                                    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan NRP" name="nrp" required>
+                                    <input type="number" class="form-control" id="nrp" placeholder="Masukkan NRP" name="nrp" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Email" name="email" required>
+                                    <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email" required>
                                 </div>
                                 <label for="email" class="form-label">Jurusan</label>
                                 <select class="form-select" aria-label="Default select example" id="jurusan" name="jurusan" required>
@@ -54,6 +55,7 @@
                     <li class="list-group-item">
                         <?= $mhs['nama'] ?>
                         <a href="" class="badge text-bg-danger text-decoration-none float-end me-1" onclick="return confirmDelete(event, <?= $mhs['id'] ?>)">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge text-bg-success text-decoration-none float-end me-2 tampilModalEdit" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id'] ?>">Edit</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge text-bg-primary text-decoration-none float-end me-2">Details</a>
                     </li>
                 <?php endforeach; ?>

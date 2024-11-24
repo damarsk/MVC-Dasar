@@ -1,7 +1,6 @@
-const BASEURL = "/phpmvc/public"; // Base URL manual
+const BASEURL = "/phpmvc/public";
 
 function confirmDelete(event, id) {
-    // Mencegah perilaku default dari tautan
     event.preventDefault();
 
     Swal.fire({
