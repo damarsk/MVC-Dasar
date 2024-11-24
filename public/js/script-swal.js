@@ -1,5 +1,3 @@
-const BASEURL = "/phpmvc/public";
-
 function confirmDelete(event, id) {
     event.preventDefault();
 

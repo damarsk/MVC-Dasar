@@ -1,5 +1,3 @@
-const BASEURL = "/phpmvc/public";
-
 $(function () {
     $(".tombolTambahData").on("click", function () {
         $('#judulModalHeader').html('Tambah Data Mahasiswa');
